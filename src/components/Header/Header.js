@@ -4,7 +4,7 @@ import searchIcon from '../../assets/img/search.png'
 import closeIcon from '../../assets/img/close.png'
 import homeIcon from '../../assets/img/home.png'
 import {NavLink} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {setSearch} from "../../slices/searchSlice/searchSlice";
 
 
@@ -20,8 +20,6 @@ const Header = () => {
     };
 
     return (
-
-
         <div className={styles.fon}>
             <div className={styles.item}>
                 <div className={styles.itemHome}>
