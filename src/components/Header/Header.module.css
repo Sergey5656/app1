@@ -1,0 +1,95 @@
+.fon{
+    border: black;
+    border-radius: 5px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+
+
+}
+
+.item{
+
+}
+
+itemHome{
+
+}
+
+.input{
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 12px 0px;
+    width: 350px;
+    border-radius: 10px;
+    font-size: 16px;
+    padding-left: 45px;
+
+}
+
+.searchIcon{
+    width: 30px;
+    height: 30px;
+
+}
+
+.closeIcon{
+    width: 20px;
+    height: 20px;
+}
+
+.menuContainer{
+border-radius: 0px;
+}
+
+.nav {
+    display: grid;
+    font-size: 16px;
+    grid-template-columns: 130px 130px 130px 200px;
+    justify-items: center;
+
+    width: 590px;
+    height: 50px;
+    border-radius: 8px;
+    font-size: 20px;
+}
+.a {
+    line-height: 50px;
+    height: 100%;
+    font-size: 15px;
+
+
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
+
+.home{
+    width: 60px;
+    height: 60px;
+    margin-right: 60px;
+}
+
+.li{
+    padding: 8px;
+    flex: 1;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 104px;
+}
+
+.activeClassName  {
+    color: blue;
+}
+
+/*.nav {*/
+/*color: aliceblue;*/
+/*    text-decoration: none;*/
+/*}*/
+/*.active {*/
+/*    text-decoration: none;*/
+/*    font-weight: bold;*/
+/*    background-color: black;*/
+/*}*/

@@ -1,25 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from "./components/Header/Header";
+import Catalog from "./components/Katalog/Catalog";
+import {Route, Routes} from "react-router-dom";
+import React from "react";
+import {useSelector} from "react-redux";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    let [items, setItems] = React.useState([])
+    React.useEffect(()=>{
+        fetch('https://63e3711065ae4931770efccc.mockapi.io/DATA')
+            .then(res=>res.json())
+            .then((arr)=> {
+                setItems(arr);
+                console.log(arr);
+            });
+    }, [])
+    const search = useSelector((state)=>state.search.search)
+    return (
+        <div className="App">
+            <Header/>
+            <Routes>
+                <Route path="/*" element={<Catalog items={items} />} />
+            </Routes>
+        </div>
+    );
 }
 
 export default App;
