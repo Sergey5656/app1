@@ -1,9 +1,13 @@
 import {configureStore} from "@reduxjs/toolkit";
-import actions from "../slices/searchSlice/searchSlice";
+import searchSlice from "../slices/searchSlice/searchSlice";
+import tittleSlice from "../slices/categorySlice/tittleSlice";
+import userReducer from "../slices/user/userSlice";
 
-export default configureStore({
+
+export const store = configureStore({
     reducer: {
-        search: actions,
-        categoryID: actions,
-    },
+        search: searchSlice.reducer,
+        tittle: tittleSlice.reducer,
+        user: userReducer,
+    }
 });

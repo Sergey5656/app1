@@ -13,6 +13,6 @@ const searchSlice = createSlice({
         },
     },
 })
-const {actions, reducer} = searchSlice
+export const {actions, reducer} = searchSlice
 export const {setSearch} = actions;
-export default reducer;
+export default searchSlice;

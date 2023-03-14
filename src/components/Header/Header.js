@@ -4,23 +4,27 @@ import searchIcon from '../../assets/img/search.png'
 import closeIcon from '../../assets/img/close.png'
 import homeIcon from '../../assets/img/home.png'
 import {NavLink} from "react-router-dom";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {setSearch} from "../../slices/searchSlice/searchSlice";
-
+import {nowTittle, selectedTittle} from "../../slices/categorySlice/tittleSlice";
 
 
 const Header = () => {
 
 
     const dispatch = useDispatch()
-
+    const tittle = useSelector((state) => state.tittle.tittle)
+    const search = useSelector((state) => state.search.search)
     let activeStyle = {
         textDecoration: "none",
         fontSize: "25px",
     };
 
     return (
+
         <div className={styles.fon}>
+            {search}
+            {tittle}
             <div className={styles.item}>
                 <div className={styles.itemHome}>
                     <img className={styles.home} src={homeIcon}/>
@@ -35,7 +39,7 @@ const Header = () => {
             </div>
             <div className={styles.menuContainer}>
                 <nav className={styles.nav}>
-                    <NavLink to="leganky" style={({ isActive }) =>
+                    <NavLink to="leganky" onClick={()=> dispatch(nowTittle())} style={({ isActive }) =>
                         isActive ? activeStyle : undefined
                     }>Лежанки
                     </NavLink>

@@ -4,6 +4,9 @@ import Catalog from "./components/Katalog/Catalog";
 import {Route, Routes} from "react-router-dom";
 import React from "react";
 import {useSelector} from "react-redux";
+import RegisterPage from "./pages/RegisterPage";
+import LoginPage from "./pages/LoginPage";
+import HomePage from "./pages/Home";
 
 function App() {
     let [items, setItems] = React.useState([])
@@ -20,7 +23,10 @@ function App() {
         <div className="App">
             <Header/>
             <Routes>
-                <Route path="/*" element={<Catalog items={items} />} />
+                <Route path="/*" element={<HomePage />} />
+                <Route path="/catalog" element={<Catalog items={items} />} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/register" element={<RegisterPage />} />
             </Routes>
         </div>
     );
